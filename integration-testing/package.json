@@ -1,0 +1,17 @@
+{
+  "name": "integration-testing",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/service.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "sinon": "^12.0.1"
+  }
+}
