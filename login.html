@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+</head>
+
+<body>
+    <form id="login-form">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+        <button id="login-btn">Login</button>
+
+    </form>
+    <div id="message"></div>
+    <div id="error-maessage"></div>
+
+    <script>
+        document.getElementById('message').innerText = 'Login successful';
+        document.getElementById('error-maessage').innerText = 'Invalid username or password';
+    </script>
+</body>
+
+</html>
