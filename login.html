@@ -9,19 +9,38 @@
 <body>
     <form id="login-form">
         <label for="username">Username</label>
-        <input type="text" name="username" id="username" required>
+        <input type="text" name="username" id="username" class="username">
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
-        <button id="login-btn">Login</button>
+        <input type="password" name="password" id="password" class="password">
+        <button type="button" id="login-btn">Login</button>
 
     </form>
     <div id="message"></div>
-    <div id="error-maessage"></div>
+    <div id="error-message"></div>
 
     <script>
-        document.getElementById('message').innerText = 'Login successful';
-        document.getElementById('error-maessage').innerText = 'Invalid username or password';
+        document.getElementById("login-btn").addEventListener("click", function () {
+            // Ambil nilai input
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Reset pesan
+            document.getElementById("message").style.display = "none";
+            document.getElementById("error-message").style.display = "none";
+
+            // Validasi kredensial
+            if (username === "testuser" && password === "testpassword") {
+                document.getElementById("message").style.display = "block";
+                document.getElementById("message").textContent = "Login successful"; // Menambahkan teks sukses
+            } else {
+                document.getElementById("error-message").style.display = "block";
+                document.getElementById("error-message").textContent =
+                    "login failed!"; // Menambahkan teks kesalahan
+            }
+
+        });
     </script>
+
 </body>
 
 </html>
