@@ -41,14 +41,20 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline finished successfully!',
-            emailext subject: 'Build Succeeded', body: 'The build succeeded!',
-            recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+            emailext(
+                to: 'rizqhaamifta@gmail.com',
+                subject: 'Build Succeeded',
+                body: 'The build succeeded!',
+                attachLog: true
+            )
         }
         failure {
-            echo 'Pipeline failed!',
-            emailext subject: 'Build Failed', body: 'The build failed.',
-            recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+            emailext(
+                to: 'rizqhaamifta@gmail.com',
+                subject: 'Build Failed',
+                body: 'The build failed. Please check the logs.',
+                attachLog: true
+            )
         }
     }
 
