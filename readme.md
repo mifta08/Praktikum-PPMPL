@@ -1,6 +1,7 @@
 # Praktikum PPMPL 8 - CI/CD Implementation
 
 ## Created By: Miftahul Rizqha
+## NIM : 2211016031
 
 ### Deskripsi
 Praktikum PPMPL 8 ini bertujuan untuk memahami dan mengimplementasikan konsep **Continuous Integration (CI)** dan **Continuous Delivery (CD)** menggunakan **Jenkins**. Dalam praktikum ini, kita akan mengintegrasikan alat CI/CD dengan proyek Node.js, mengotomatiskan proses build, test, dan deploy aplikasi.
