@@ -24,6 +24,8 @@ pipeline {
             }
         }
 
+        // TODO - Tambahkan unit test baru
+
         stage('Build') {
             steps {
                 echo 'Building the application...'
