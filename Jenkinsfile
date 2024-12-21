@@ -47,7 +47,6 @@ pipeline {
                 to: 'rizqhaamifta@gmail.com',
                 subject: 'Build Succeeded',
                 body: 'The build succeeded!',
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']],
                 attachLog: true
             )
         }
@@ -56,7 +55,6 @@ pipeline {
                 to: 'rizqhaamifta@gmail.com',
                 subject: 'Build Failed',
                 body: 'The build failed. Please check the logs.',
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']],
                 attachLog: true
             )
         }
