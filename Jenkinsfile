@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environtment {
-        CI = true
+        CI = 'true'
     }
 
     stages {
