@@ -25,6 +25,11 @@ pipeline {
         }
 
         // TODO - Tambahkan unit test baru
+        stage('Run Integration Tests') {
+            steps {
+                bat 'npm run integration-test'
+            }
+        }
 
         stage('Build') {
             steps {
