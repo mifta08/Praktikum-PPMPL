@@ -9,7 +9,7 @@ pipeline {
     }
 
     stages {
-        stage('checkout') {
+        stage('checkout branch prak8') {
             steps {
                 git branch: 'prak8', url: 'https://github.com/mifta08/Praktikum-PPMPL.git'
             }
@@ -38,7 +38,7 @@ pipeline {
             }
         }
 
-        stage('checkout') {
+        stage('checkout branch main') {
             steps {
                 git branch: 'main', url: 'https://github.com/mifta08/Praktikum-PPMPL.git'
             }
