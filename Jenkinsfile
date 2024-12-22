@@ -3,6 +3,9 @@ pipeline {
 
     environment {
         CI = 'true'
+        VERCEL_TOKEN = credentials('VERCEL_TOKEN')
+        VERCEL_ORG_ID = credentials('VERCEL_ORG_ID')
+        VERCEL_PROJECT_ID = credentials('VERCEL_PROJECT_ID')
     }
 
     stages {
