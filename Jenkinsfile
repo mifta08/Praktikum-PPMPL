@@ -29,13 +29,16 @@ pipeline {
 
         // TODO - Tambahkan unit test baru
 
-        stage('Debug Branch') {
+        stage('Run Integration Tests on branch Main') {
+            when {
+                expression { return env.GIT_BRANCH == 'origin/main' }
+            }
             steps {
-                echo "Branch: ${env.BRANCH_NAME}"
+                bat 'npm run integration-test'
             }
         }
 
-        stage('Run Integration Tests on Prak8') {
+        stage('Run Integration Tests on branch prak8') {
             when {
                 expression { return env.GIT_BRANCH == 'origin/prak8' }
             }
