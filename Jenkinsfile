@@ -39,6 +39,9 @@ pipeline {
         }
 
         stage('checkout branch main') {
+            when {
+                expression { return env.GIT_BRANCH == 'origin/prak8' }
+            }
             steps {
                 git branch: 'main', url: 'https://github.com/mifta08/Praktikum-PPMPL.git'
             }
