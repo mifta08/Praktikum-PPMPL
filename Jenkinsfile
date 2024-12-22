@@ -46,10 +46,11 @@ pipeline {
                 script{
                     echo "Current Branch: ${env.GIT_BRANCH}"
                     echo "Current Build Status: ${currentBuild.result}"
+                    echo "Vercel Token is set: ${env.VERCEL_TOKEN != null ? 'Yes' : 'No'}"
                     echo "VERCEL_TOKEN: ${env.VERCEL_TOKEN}"
                     // Deploy to Vercel using Vercel CLI
                     bat 'npm install -g vercel'
-                    bat 'vercel --token $VERCEL_TOKEN --prod'
+                    bat 'vercel --token %VERCEL_TOKEN% --prod'
                 }
             }
         }
