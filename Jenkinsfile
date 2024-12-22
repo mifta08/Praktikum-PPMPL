@@ -37,7 +37,7 @@ pipeline {
 
         stage('Run Integration Tests on Prak8') {
             when {
-                expression { return env.BRANCH_NAME == 'prak8' }
+                expression { return env.GIT_BRANCH == 'origin/prak8' }
             }
             steps {
                 bat 'npm run integration-test'
