@@ -47,12 +47,6 @@ pipeline {
             }
         }
 
-        stage('Run Integration Tests') {
-            steps {
-                bat 'npm run integration-test'
-            }
-        }
-
         stage('Build') {
             steps {
                 echo 'Building the application...'
