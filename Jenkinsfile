@@ -29,6 +29,12 @@ pipeline {
 
         // TODO - Tambahkan unit test baru
 
+        stage('Debug Branch') {
+            steps {
+                echo "Branch: ${env.BRANCH_NAME}"
+            }
+        }
+
         stage('Run Integration Tests on Prak8') {
             when {
                 expression { return env.BRANCH_NAME == 'prak8' }
