@@ -47,8 +47,8 @@ pipeline {
             }
             steps {
                     // Deploy to Vercel using Vercel CLI
-                    sh 'npm install -g vercel'
-                    sh 'vercel --token $VERCEL_TOKEN --prod'
+                    bat 'npm install -g vercel'
+                    bat 'vercel --token $VERCEL_TOKEN --prod'
             }
         }
     }
