@@ -29,9 +29,9 @@ pipeline {
 
         // TODO - Tambahkan unit test baru
 
-        stage('Run Integration Tests on Develop') {
+        stage('Run Integration Tests on Prak8') {
             when {
-                branch 'prak8'
+                expression { return env.BRANCH_NAME == 'prak8' }
             }
             steps {
                 bat 'npm run integration-test'
