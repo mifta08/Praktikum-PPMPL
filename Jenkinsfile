@@ -46,9 +46,13 @@ pipeline {
                 branch 'prak8'  // Deploy hanya jika branch yang digunakan adalah main
             }
             steps {
+                script{
+                    echo "Current Branch: ${env.GIT_BRANCH}"
+                    echo "Current Build Status: ${currentBuild.result}"
                     // Deploy to Vercel using Vercel CLI
                     bat 'npm install -g vercel'
                     bat 'vercel --token $VERCEL_TOKEN --prod'
+                }
             }
         }
     }
