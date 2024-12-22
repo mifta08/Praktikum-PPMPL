@@ -38,10 +38,14 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy to Staging') {
+            when {
+                branch 'prak8'  // Deploy hanya jika branch yang digunakan adalah main
+            }
             steps {
-                echo 'Deploying the application...'
-                // Tambahkan perintah deploy jika diperlukan
+                    // Deploy to Vercel using Vercel CLI
+                    sh 'npm install -g vercel'
+                    sh 'vercel --token $VERCEL_TOKEN --prod'
             }
         }
     }
