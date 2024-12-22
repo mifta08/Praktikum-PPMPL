@@ -4,6 +4,8 @@ pipeline {
     environment {
         CI = 'true'
         VERCEL_TOKEN = credentials('VERCEL_TOKEN')
+        VERCEL_ORG_ID = credentials('VERCEL_ORG_ID')
+        VERCEL_PROJECT_ID = credentials('VERCEL_PROJECT_ID')
     }
 
     stages {
@@ -42,10 +44,7 @@ pipeline {
         stage('Deploy to Staging') {
             steps {
                 script{
-                    echo "Current Branch: ${env.GIT_BRANCH}"
-                    echo "Current Build Status: ${currentBuild.result}"
                     echo "Vercel Token is set: ${env.VERCEL_TOKEN != null ? 'Yes' : 'No'}"
-                    echo "VERCEL_TOKEN: ${env.VERCEL_TOKEN}"
                     // Deploy to Vercel using Vercel CLI
                     bat 'npm install -g vercel'
                     bat 'vercel --token %VERCEL_TOKEN% --prod'
