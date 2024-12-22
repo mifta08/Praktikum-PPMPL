@@ -29,18 +29,24 @@ pipeline {
 
         // TODO - Tambahkan unit test baru
 
-        stage('Run Integration Tests on branch Main') {
+        stage('Run Integration Tests on branch prak8') {
             when {
-                expression { return env.GIT_BRANCH == 'origin/main' }
+                expression { return env.GIT_BRANCH == 'origin/prak8' }
             }
             steps {
                 bat 'npm run integration-test'
             }
         }
 
-        stage('Run Integration Tests on branch prak8') {
+        stage('checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/mifta08/Praktikum-PPMPL.git'
+            }
+        }
+
+        stage('Run Integration Tests on branch Main') {
             when {
-                expression { return env.GIT_BRANCH == 'origin/prak8' }
+                expression { return env.GIT_BRANCH == 'origin/main' }
             }
             steps {
                 bat 'npm run integration-test'
