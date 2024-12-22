@@ -42,9 +42,6 @@ pipeline {
         }
 
         stage('Deploy to Staging') {
-            when {
-                branch 'prak8'  // Deploy hanya jika branch yang digunakan adalah main
-            }
             steps {
                 script{
                     echo "Current Branch: ${env.GIT_BRANCH}"
